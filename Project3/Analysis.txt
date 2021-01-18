@@ -1,0 +1,63 @@
+Method					ArrayList Runtime (ms)	LinkedList Runtime (ms)		ArrayList Runtime (BigO)	LinkedList Runtime(BigO)	Explanation
+boolean add(T element)				10			9				O(1)				O(n)			"ArrayList just adds the element at the end of the list. Since we 
+																				can use the last index to add the element, we don't have to iterate through the list, so it's just O(1). 
+																				With LinkedList, nodes don't store indices, so you have to go through the entire
+ 																				list until to get to the end and add the element. Iterating through list makes it O(n). 
+																				As we just add the element with the index with ArrayList, ArrayList is better (no need to go through the list)	 "
+
+boolean add(int index, T element)		4			1				O(n)				O(n)			"It's the same as add(element) where ArrayList just has to go to the index, but since 
+																				you need to push the elements up one indices, you'll need to iterate through the loop to
+ 																				push each element, making it O(n). LinkedList isn't affected by this indices 
+																				pushing since setting the element will just change the pointer point at the next value, so it's still O(n). 
+																				With the same time complexity, neither is better than the other."
+
+void clear()					1			1				O(1)				O(1)			"In both classes, we aren't iterating through any list. ArrayList just creates a new array of length 
+																				2 and resets the size to 0. LinkedList just sets the head to null, which automatically clears the whole list. 
+																				So both classes either create a new empty list or sets it to be empty, making it O(1).
+																				As both have the same time complexity, neither is better than the other"
+
+boolean contains(T element)			1			1				O(n)				O(n)			"Both classes would have to iterate through the loop once just to see if the element 
+																				is in the list, thus making both classes have a runtime of O(n).  Since both do the same thing going through the list, 
+																				neither is better than the other. "
+
+T get(int index)				1			1				O(1)				O(n)			"ArrayList is only returning the value at a given index, it doesn't iterate 
+																				through the list because it is an array and can just find the value with at whatever index. 
+																				With LinkedList, you need to iterate through the list to get to the node value as Nodes don't have indices for you to access. 
+																				In the method, you have to go through the list and add to an index counter in order to get to the
+ 																				specific node which makes it O(n). ArrayList is better as it doesn't need to iterate through the list. "
+
+int indexOf(T element)				1			0				O(n)				O(n)			"Same thing with contains() where both classes will have iterate through their respective lists 
+																				in order to get the indices of the element. Just LinkedList needs a counter to get the indices,
+ 																				but both would have O(n) due to them iterating through the list. Since both have the same runtime, one isn't better than the other. "
+
+boolean isEmpty()				0			0				O(n)				O(1)			"For ArrayList, we iterate the whole list n amount of times until we hit a null values.
+ 																				In LinkedList, we don't iterate through anything and just check if the head is null, 
+																				thus making it O(1). Since LinkedList just makes head null instead of looping through the list, LinkedList is better in this case."
+
+int lastIndexOf(T element)			0			1				O(n)				O(n)			"Same thing with contains() where both classes will have iterate through their respective lists in order to get the indices of the element. 
+																				The only thing that changed is we are starting from the bottom of the list. Just LinkedList needs a counter to get the indices, 
+																				but both would have O(n) due to them iterating through the list.  As they have the same runtime, one isn't better than the other.  "
+
+T set(int index, T element)			1			0				O(1)				O(n)			"With ArrayList, since we can use the indices, we can just go that index and
+																				change the element without needing to go through the list, so it's O(1). 
+																				LinkedList doesn't have indices so you need to use a counter and traverse the whole list, making it O(n). 
+																				Since ArrayList just goes to that index instead of looping through the list to get the index, ArrayList is better in this case. "
+
+int size()					0			1				O(1)				O(n)			"With the ArrayList, we are just returning the size of the array, which we have count of in the size variable. 
+																				We never iterate in the list. In LinkedList, we visit every node in the list and iterating n times until we reach a null value,
+																				thus making it O(n). Since ArrayList literally just returns the size the variable instead of going through the list, ArrayList is better. "
+
+void sort(boolean order)			1			0				O(n^2)				O(n^2)			"Both use bubble sort to sort the elements. Exact same process in both classes,
+ 																				but LinkedList just sets the runner to the next value. Otherwise, it's uses the same sorting algorithm.
+																				As both use the same algorithm, neither is better than the other. "
+
+boolean remove(T element)			0			1				O(n^2)				O(n)			"ArrayList is O(n^2) since it uses two for loops to iterate through the list to find the element and replace the ones after it. 
+																				Where as LinkedList on the otherhand is O(n) because the time complexity is dependent on the length of the linkedlist (this is the same case for ArrayList). 
+																				Thus making the LinkedList method better due to it being less complex. "
+
+T remove(int index)				1			0				O(n)				O(n)			"ArrayList is O(n) since it has one for loop that iterates through the list in order to move the elements in each index.
+																				In LinkedList it is also the same because it is again dependent on the length of the list in order to find the element that is not null and not in the index.
+																				Thus, the time complexities of both are the same making neither superior to one another."
+
+String toString()				0			0				O(n)				O(n)			"It's the same as both classes have to iterate through their respective elements n amount of times in order to add to the empty string. 
+																				Virtually both are doing the exact same process. As it is the same process, neither is better than the other. "
